@@ -1,0 +1,49 @@
+// Create a variable to hold your NFT's
+let nftCollection = [];
+
+// Function to mint an NFT
+function mintNFT(name, description, image) {
+  // Create an NFT object using the provided metadata
+  let nft = {
+    name: name,
+    description: description,
+    image: image
+  };
+
+  // Store the NFT object in the nftCollection array
+  nftCollection.push(nft);
+  console.log("Minted: " + name)
+}
+
+// Function to list all NFTs
+function listNFTs() {
+  // Iterate over the nftCollection array
+  for (let i = 0; i < nftCollection.length; i++) {
+    // Get the metadata of the current NFT
+    let currentNFT = nftCollection[i];
+
+    // Print the metadata to the console
+    console.log("Name: " + currentNFT.name);
+    console.log("Description: " + currentNFT.description);
+    console.log("Image: " + currentNFT.image);
+    console.log("-------------------------");
+  }
+}
+
+// Function to get the total supply of NFTs
+function getTotalSupply() {
+  // Return the length of the nftCollection array
+  return nftCollection.length;
+}
+
+// Variables for NFT metadata
+let nftName = "My first NFT";
+let nftDescription = "This is my first NFT";
+let nftImage = "nft.jpg";
+
+// Mint the NFT using the variables
+mintNFT(nftName, nftDescription, nftImage);
+
+// Call other functions as needed
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
